@@ -14,7 +14,7 @@
         tools:layout_editor_absoluteY="8dp">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:ems="10"
@@ -30,25 +30,28 @@
                 android:gravity="center">
 
                 <Button
+                    android:id="@+id/s2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="^2" />
 
                 <Button
+                    android:id="@+id/d2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="/2" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/divide"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="/" />
 
                 <Button
+                    android:id="@+id/back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="<" />
+                    android:text="&lt;" />
             </TableRow>
 
             <TableRow
@@ -57,22 +60,25 @@
                 android:gravity="center">
 
                 <Button
+                    android:id="@+id/seven"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="7" />
 
                 <Button
+                    android:id="@+id/eight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/nine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9" />
 
                 <Button
+                    android:id="@+id/multiply"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="x" />
@@ -84,22 +90,25 @@
                 android:gravity="center">
 
                 <Button
+                    android:id="@+id/four"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="4" />
 
                 <Button
+                    android:id="@+id/five"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/six"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6" />
 
                 <Button
+                    android:id="@+id/minus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-" />
@@ -111,22 +120,25 @@
                 android:gravity="center">
 
                 <Button
+                    android:id="@+id/two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="1" />
 
                 <Button
+                    android:id="@+id/two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3" />
 
                 <Button
+                    android:id="@+id/plus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+" />
@@ -138,22 +150,25 @@
                 android:gravity="center">
 
                 <Button
+                    android:id="@+id/negation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="+/-" />
 
                 <Button
+                    android:id="@+id/zero"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/dot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="," />
+                    android:text="." />
 
                 <Button
+                    android:id="@+id/equal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="=" />
