@@ -8,9 +8,8 @@ import android.widget.TextView;
 
 public class BoguLator extends AppCompatActivity {
 
-    Button one;
-    Integer poprzedniczka;
-    String dzialanko;
+    double pamiec;
+    char operacja;
     TextView text;
 
     @Override
@@ -56,47 +55,87 @@ public class BoguLator extends AppCompatActivity {
                 apendzik(9);
                 break;
             case R.id.negation:
-                text.setText(String.valueOf(Integer.parseInt(text.getText().toString())*-1));
+                text.setText(String.valueOf(pobierzWartosc()*-1));
                 break;
             case R.id.plus:
-                text.setText("olaBoga");
+                ustawOperacje('+');
                 break;
             case R.id.minus:
-                text.setText("olaBoga");
+                ustawOperacje('-');
                 break;
             case R.id.equal:
-                text.setText("olaBoga");
+                wykonajDzialanie();
                 break;
             case R.id.multiply:
-                text.setText("olaBoga");
+                ustawOperacje('*');
                 break;
             case R.id.divide:
-                text.setText("olaBoga");
-                ustawuszka(5, "dodawanie");
+                ustawOperacje('/');
                 break;
             case R.id.back:
                 text.setText(text.getText().toString().substring(0, text.getText().toString().length()-1));
+                if(text.getText().length() == 0 ) text.setText("0");
                 break;
             case R.id.d2:
-                text.setText(String.valueOf(Integer.parseInt(text.getText().toString())/2));
+                text.setText(String.valueOf(pobierzWartosc()/ (double)2));
                 break;
             case R.id.s2:
-                text.setText(String.valueOf(Integer.parseInt(text.getText().toString())*Integer.parseInt(text.getText().toString())));
+                text.setText(String.valueOf(pobierzWartosc()*pobierzWartosc()));
+                break;
+            case R.id.dot:
+                int dots = text.length() - String.valueOf(text.getText()).replace(".", "").length();
+//                text.setText(String.valueOf( dots));
+//                break;
+                if(dots == 0) {
+                    text.append(".");
+                }
+                break;
+            case R.id.ce:
+                text.setText("0");
                 break;
         }
-
     }
 
     private void apendzik(int i) {
-        if(Integer.parseInt(text.getText().toString()) == 0) {
+        if(Double.parseDouble(text.getText().toString()) == 0) {
             text.setText(String.valueOf(i));
         } else {
             text.append(String.valueOf(i));
         }
     }
 
-    private void ustawuszka(int i) {
-        poprzedniczka = Integer.parseInt(text.getText().toString());
+    private void ustawOperacje(char znakOperacji) {
+        pamiec = Double.parseDouble(text.getText().toString());
+        operacja = znakOperacji;
         text.setText("0");
     }
+
+    private double pobierzWartosc()
+    {
+        return Double.parseDouble(text.getText().toString());
+    }
+
+    public void wykonajDzialanie() {
+        double wynik = 0;
+
+        switch (operacja) {
+        case '+':
+            wynik = pamiec + pobierzWartosc();
+            break;
+        case '-':
+            wynik = pamiec - pobierzWartosc();
+            break;
+        case '*':
+            wynik = pamiec * pobierzWartosc();
+            break;
+        case '/':
+            if(pobierzWartosc() == 0) {
+                wynik = 0;
+            }
+            wynik = pamiec / (double)pobierzWartosc();
+            break;
+        }
+        text.setText(String.valueOf(wynik));
+    }
+
 }
